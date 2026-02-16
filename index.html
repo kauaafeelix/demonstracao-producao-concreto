@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planta de Produção de Concreto</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<h1>🏗️ Planta de Produção de Concreto</h1>
+<p class="subtitle">Simulação Interativa com Sensores e Atuadores</p>
+
+<div class="controls">
+<button class="btn btn-start" onclick="startProduction()">▶️ Iniciar Produção</button>
+<button class="btn btn-stop" onclick="stopProduction()">⏹️ Parar</button>
+<button class="btn btn-fail" onclick="simulateFailure('peso')">⚠️ Falha Sensor Peso</button>
+<button class="btn btn-fail" onclick="simulateFailure('nivel')">⚠️ Falha Sensor Nível</button>
+<button class="btn btn-fail" onclick="simulateFailure('valvula')">⚠️ Falha Válvula</button>
+<button class="btn btn-fail" onclick="simulateFailure('mixer')">⚠️ Falha Misturador</button>
+</div>
+
+<canvas id="canvas" width="1200" height="700"></canvas>
+
+<div class="status-panel">
+<div class="status-card"><h3>📊 Status</h3><div class="status-value" id="status">Parado</div></div>
+<div class="status-card"><h3>⚖️ Peso</h3><div class="status-value" id="weight">0 kg</div></div>
+<div class="status-card"><h3>💧 Água</h3><div class="status-value" id="water">100%</div></div>
+<div class="status-card"><h3>🔄 RPM</h3><div class="status-value" id="rpm">0</div></div>
+</div>
+
+<div id="alert" class="alert">
+<h4 id="alertTitle"></h4>
+<p id="alertMsg"></p>
+</div>
+
+<div class="legend">
+<div class="legend-item"><div class="legend-icon" style="background:#3b82f6;"></div><span>Sensores</span></div>
+<div class="legend-item"><div class="legend-icon" style="background:#10b981;"></div><span>Atuadores</span></div>
+<div class="legend-item"><div class="legend-icon" style="background:#f59e0b;"></div><span>Materiais</span></div>
+<div class="legend-item"><div class="legend-icon" style="background:#06b6d4;"></div><span>Água</span></div>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
